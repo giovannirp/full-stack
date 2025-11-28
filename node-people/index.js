@@ -69,7 +69,7 @@ app.delete("/listaNomes/:id", (req, res) => {
   const id = req.params.id;
   const index = buscarIdNomes(id);
 
-  // Se não encontrar, retorna erro
+  // Se não encontrar, retorna erro ddd
   if (index === -1) {
     return res.status(404).send(`Nenhum nome com id ${id} foi encontrado.`);
   }
