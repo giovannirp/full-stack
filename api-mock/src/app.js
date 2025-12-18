@@ -13,4 +13,9 @@ app.get("/", (req, res) => {
 // Usando a rota de selecões
 app.use(selecoesRoutes);
 
+// rota 404
+app.use((req, res) => {
+    res.status(404).json({ mensagem: "Rota nao encontrada"});
+})
+
 export default app;
