@@ -1,10 +1,24 @@
-const http = require('http');
-const hanldle = require('./handle');
-const hello = require('console-log-hello-world');
+const express = require('express');
+const home = require('./routes/home')
+const client = require('./routes/client')
+const app = express();
 const PORT = 3000;
 
-const server = http.createServer(hanldle);
+app.use('/', home);
+app.use('/client', client)
 
-server.listen(PORT, () => {
-  console.log(`A porta que está funcionando é ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`App rodando http://localhost:${PORT}`);
 });
+
+
+// const http = require('http');
+// const hanldle = require('./handle');
+// const hello = require('console-log-hello-world');
+// const PORT = 3000;
+
+// const server = http.createServer(hanldle);
+
+// server.listen(PORT, () => {
+//   console.log(`A porta que está funcionando é ${PORT}`);
+// });

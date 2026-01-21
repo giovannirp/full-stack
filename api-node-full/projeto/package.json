@@ -4,11 +4,14 @@
   "description": "Projeto teste",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js --daly 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "hello-world-npm": "^1.1.1"
+    "express": "^5.2.1",
+    "hello-world-npm": "^1.1.1",
+    "nodemon": "^3.1.11"
   }
 }
