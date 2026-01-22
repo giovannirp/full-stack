@@ -1,9 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const home = require('./routes/home')
 const client = require('./routes/client')
 const app = express();
 const PORT = 3000;
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', home);
 app.use('/client', client)
 
