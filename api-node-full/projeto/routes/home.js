@@ -8,7 +8,10 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.send("Hello Wolrd")
+  res.render('home', {
+    message: "Hello World do parametro"
+  });
+  // res.send("Hello Wolrd")
 });
 
 router.get('/welcome', (req, res) => {
