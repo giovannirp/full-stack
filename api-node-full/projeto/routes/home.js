@@ -8,10 +8,10 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
+  console.log('bateu na rota /');
   res.render('home', {
-    message: "Hello World do parametro"
+    message: 'Hello Gigi'
   });
-  // res.send("Hello Wolrd")
 });
 
 router.get('/welcome', (req, res) => {

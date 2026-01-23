@@ -7,7 +7,9 @@ const app = express();
 const PORT = 3000;
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', './views');
+
+app.use('/assets', express.static('./assets'));
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
