@@ -1,0 +1,40 @@
+extends ./main 
+
+block content 
+  div.container.mt-3.col-md-8
+    form(action="#", method="post")
+
+      div.mb-3
+        input.form-control(
+          type="text"
+          name="cliente",
+          placeholder="Digite o nome do cliente"
+          id="cliente",
+          required
+        )
+        div.mb-3
+        input.form-control(
+          type="text",
+          name="telefone",
+          id="telefone",
+          placeholder="Digite um telefone",
+          required
+        )
+        div.mb-3
+        input.form-control(
+          type="email",
+          name="email",
+          id="email",
+          placeholder="Digite um e-mail",
+          required
+        )
+        div.mb-3
+        input.form-control(
+          type="text",
+          name="contato",
+          id="contato",
+          placeholder="Digite um contato do cliente",
+          required
+        )
+        div.mb-3
+        button.btn.btn-success.col-md-12(type="submit") cadastrar
