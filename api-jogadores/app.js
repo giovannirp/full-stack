@@ -1,4 +1,5 @@
 const express = require('express');
+const jogadoresRoutes = require('./routes/jogadores.routes')
 
 const app = express();
 const PORT = 3000;
@@ -6,36 +7,12 @@ const PORT = 3000;
 // Middleware para entender o json
 app.use(express.json());
 
-const jogadores = [
-  {
-    id: 1,
-    nome: "Dimba"
-  },
-  {
-    id: 2,
-    nome: "Rafinha"
-  }
-]
+// usando as rotas jogadores
+app.use('/jogadores', jogadoresRoutes);
 
 // Rota básica (teste)
 app.get('/', (req, res) => {
   res.send("Api rodando 🚀🚀🚀");
-});
-
-// Rota jogadores
-app.get('/jogadores', (req, res) => {
-  res.send(jogadores)
-});
-
-// Exemplo de POST
-app.post('/jogadores', (req, res) => {
-  const nome = req.body;
-
-  res.json({
-    message: 'usuário criado com sucesso',
-    nome
-  });
-
 });
 
 // Subindo servidor
