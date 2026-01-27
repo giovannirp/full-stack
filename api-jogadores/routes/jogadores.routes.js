@@ -13,13 +13,19 @@ router.get('/', (req, res) => {
 
 // Exemplo de POST
 router.post('/', (req, res) => {
-  const nome = req.body;
+  const { nome } = req.body;
 
-  res.json({
-    message: 'usuário criado com sucesso',
+  const novoJogador = {
+    id: jogadores.length + 1,
     nome
-  });
+  }
 
+  jogadores.push(novoJogador);
+
+  res.status(201).json({
+    message: 'Jogador cadastrado com sucesso',
+    jogador: novoJogador
+  })
 });
 
 module.exports = router;
