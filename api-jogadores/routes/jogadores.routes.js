@@ -28,4 +28,24 @@ router.post('/', (req, res) => {
   })
 });
 
+// Delete 
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id);
+
+  const jogador = jogadores.find(j => j.id === id);
+
+  if (!jogador) {
+    return res.status(404).json({ message: 'Jogador não encontrado '});
+  }
+
+  jogadores.splice(jogadores.indexOf(jogador), 1);
+
+  res.json({
+    message: 'Jogador removido com sucesso',
+    jogador
+  })
+
+  
+});
+
 module.exports = router;
