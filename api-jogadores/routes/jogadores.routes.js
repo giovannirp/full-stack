@@ -28,6 +28,22 @@ router.post('/', (req, res) => {
   })
 });
 
+// Jogadores / getPorID
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id);
+
+  // Procura por array o jogador cujo id seja igual ao id passando por URL
+  const jogador = jogadores.find(j => j.id === id);
+
+  if (!jogador) {
+    return res.status(404).json({
+      message: 'Jogador não encontrado'
+    });
+  }
+
+  res.json(jogador);
+});
+
 // Delete 
 router.delete('/:id', (req, res) => {
   const id = Number(req.params.id);
@@ -43,9 +59,7 @@ router.delete('/:id', (req, res) => {
   res.json({
     message: 'Jogador removido com sucesso',
     jogador
-  })
-
-  
+  });
 });
 
 module.exports = router;
