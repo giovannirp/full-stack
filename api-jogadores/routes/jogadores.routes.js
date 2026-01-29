@@ -62,4 +62,33 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+// PUT /jogadores/:id
+router.put('/:id', (req, res) => {
+  const id = Number(req.params.id);
+
+  const { nome } = req.body;
+  
+  const jogador = jogadores.find(j => j.id === id);
+
+  if (!jogador) {
+    return res.status(404).json({ 
+      message: 'Jogador não encontrado'}
+    );
+  }
+
+  if (!nome) {
+    return res.status(400).json({
+       message: 'O nome é obrigatório'}
+    );
+  }
+
+  jogador.nome = nome;
+
+  res.json({
+    message: 'Jogador foi alterado com sucesso',
+    jogador
+  })
+
+});
+
 module.exports = router;
