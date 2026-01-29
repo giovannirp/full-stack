@@ -6,6 +6,7 @@ const jogadores = [
   { id: 2, nome: 'Rafinha' }
 ];
 
+
 // Rota jogadores
 router.get('/', (req, res) => {
   res.send(jogadores)
