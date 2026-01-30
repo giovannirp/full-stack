@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const jogadores = [
-  { id: 1, nome: 'Dimba' },
-  { id: 2, nome: 'Rafinha' }
-];
+const jogadores = require('../data/jogadores.data');
 
 
 // Rota jogadores
